@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
-</head>
-<body>
-<header>
-    <p>Шапка</p>
-</header>
-<main>
+{% extends "base_generic.html" %}
+{% block title %}<title>Главная страница</title>{% endblock %}
+{% block content %}
     <h1>C++ Разработчик</h1>
 
     <p>
@@ -23,9 +15,4 @@
         Вам придется работать с высокоуровневыми концепциями, такими как объектно-ориентированное программирование,
         а также ближе к железу, управлять памятью и оптимизировать код для достижения высокой производительности.
     </p>
-</main>
-<footer>
-    <p>Подвал</p>
-</footer>
-</body>
-</html>
+{% endblock %}
