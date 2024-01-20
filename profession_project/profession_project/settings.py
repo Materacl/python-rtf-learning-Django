@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'home',
     'demand',
     "geography",
+    'import_export',
 ]
 
 MIDDLEWARE = [
