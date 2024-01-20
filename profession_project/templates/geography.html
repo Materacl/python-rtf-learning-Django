@@ -1,5 +1,95 @@
 {% extends "base_generic.html" %}
-{% block title %}<title>География</title>{% endblock %}
+{% load static %}
+
+{% block title %}
+    <title>География</title>
+{% endblock %}
+
 {% block content %}
-    <h1>Здесь будет география</h1>
+    <h1>География</h1>
+
+    <h2>Уровень зарплат по городам</h2>
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Город</th>
+                    <th>Средняя Зарплата</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in area_salary_all %}
+                    <tr>
+                        <td>{{ row.area_name }}</td>
+                        <td>{{ row.average_salary }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'geography/img/area_salary_all_plot.png' %}" alt="График" width="1000" height="400">
+    </div>
+
+    <h2>Доля вакансий по городам</h2>
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Город</th>
+                    <th>Доля вакансий</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in area_count_all %}
+                    <tr>
+                        <td>{{ row.area_name }}</td>
+                        <td>{{ row.vacancy_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'geography/img/area_count_all_plot.png' %}" alt="График" width="1000" height="400">
+    </div>
+
+    <h2>Уровень зарплат по городам ({{ prof }})</h2>
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Город</th>
+                    <th>Средняя Зарплата</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in area_salary_prof %}
+                    <tr>
+                        <td>{{ row.area_name }}</td>
+                        <td>{{ row.average_salary }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'geography/img/area_salary_prof_plot.png' %}" alt="График" width="1200" height="600">
+    </div>
+
+    <h2>Доля вакансий по городам ({{ prof }})</h2>
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Город</th>
+                    <th>Доля вакансий</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in area_count_prof %}
+                    <tr>
+                        <td>{{ row.area_name }}</td>
+                        <td>{{ row.vacancy_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'geography/img/area_count_prof_plot.png' %}" alt="График" width="1200" height="600">
+    </div>
+
 {% endblock %}

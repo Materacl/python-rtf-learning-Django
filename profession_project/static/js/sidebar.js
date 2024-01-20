@@ -8,7 +8,7 @@ function toggleSidebar() {
         sidebar.style.width = '0';
         toggleButton.innerHTML = '☰'; // Изменение значка на ☰
     } else {
-        sidebar.style.width = '500px';
+        sidebar.style.width = '250px';
         toggleButton.innerHTML = '✖'; // Изменение значка на ✖
     }
 

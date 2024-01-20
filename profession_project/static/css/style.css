@@ -79,7 +79,10 @@ body {
 /*Content*/
 .content {
     flex: 1;
-    padding: 20px 200px;
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: calc(200px + 20px);
+    box-sizing: border-box;
 }
 
 .content-wrapper {
@@ -120,10 +123,9 @@ table td {
     margin-bottom: 20px; /* Отступ снизу */
 }
 
-img {
-    display: block;
-    margin: 0;
-    padding: 0;
+.table-graph-wrapper img {
+    max-width: 100%;
+    height: auto;
 }
 /**/
 
