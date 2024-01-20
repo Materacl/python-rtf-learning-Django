@@ -19,10 +19,12 @@ from django.urls import path
 from home.views import index_page
 from demand.views import demand_page
 from geography.views import geography_page
+from skills.views import skills_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page, name='home'),
     path('demand/', demand_page, name='demand'),
-    path('geography/', geography_page, name='geography')
+    path('geography/', geography_page, name='geography'),
+    path('skills/', skills_page, name='skills')
 ]
