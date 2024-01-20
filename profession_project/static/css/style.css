@@ -15,6 +15,7 @@ body {
     width: 0;
     overflow: hidden;
     transition: width 0.3s;
+    background-color: #333;
 }
 
 .sidebar-nav {
@@ -49,7 +50,7 @@ body {
 
 .sidebar-nav-list-item a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: bold;
 }
 
@@ -75,7 +76,21 @@ body {
 
 /**/
 
+/*Content*/
 .content {
     flex: 1;
-    padding: 20px 100px;
+    padding: 20px 200px;
 }
+
+.content-wrapper {
+    overflow: auto;
+}
+
+.float-left {
+    float: left;
+    margin-right: 20px; /* Устанавливаем отступ справа для разделения изображения и текста */
+}
+
+/**/
+
+/*Footer*/
