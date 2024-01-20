@@ -88,9 +88,44 @@ body {
 
 .float-left {
     float: left;
-    margin-right: 20px; /* Устанавливаем отступ справа для разделения изображения и текста */
 }
 
+/* Общий стиль для таблиц */
+table {
+    border-collapse: collapse;
+    width: 200px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    font-weight: bold; /* Жирный шрифт для заголовков */
+    text-align: center; /* Выравнивание по центру */
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стиль для контейнера таблицы и графика */
+.table-graph-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    border: 1px solid #dddddd; /* Обводка */
+    padding: 10px; /* Поля вокруг контейнера */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+img {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
 /**/
+
 
 /*Footer*/

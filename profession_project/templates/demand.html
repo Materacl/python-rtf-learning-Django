@@ -1,79 +1,91 @@
-<!-- Assuming you have the same template structure as before -->
 {% extends "base_generic.html" %}
+{% load static %}
 {% block title %}<title>Востребованность</title>{% endblock %}
 {% block content %}
     <h1>Востребованность</h1>
 
     <h2>Динамика уровня зарплат по годам (Общая)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Год</th>
-                <th>Средняя Зарплата</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in dynamic_salary_all %}
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ row.year }}</td>
-                    <td>{{ row.average_salary }}</td>
+                    <th>Год</th>
+                    <th>Средняя Зарплата</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for row in dynamic_salary_all %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.average_salary }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'demand/img/dynamic_salary_all_plot.png' %}" alt="График" width="1000" height="600">
+    </div>
 
     <h2>Динамика количества вакансий по годам (Общая)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Год</th>
-                <th>Количество Вакансий</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in dynamic_count_all %}
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ row.year }}</td>
-                    <td>{{ row.vacancy_count }}</td>
+                    <th>Год</th>
+                    <th>Количество Вакансий</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for row in dynamic_count_all %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.vacancy_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'demand/img/dynamic_count_all_plot.png' %}" alt="График" width="1000" height="600">
+    </div>
 
     <h2>Динамика уровня зарплат по годам ({{ prof }})</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Год</th>
-                <th>Средняя Зарплата</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in dynamic_salary_prof %}
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ row.year }}</td>
-                    <td>{{ row.average_salary }}</td>
+                    <th>Год</th>
+                    <th>Средняя Зарплата</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for row in dynamic_salary_prof %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.average_salary }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'demand/img/dynamic_salary_prof_plot.png' %}" alt="График" width="1000" height="600">
+    </div>
 
     <h2>Динамика количества вакансий по годам ({{ prof }})</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Год</th>
-                <th>Количество Вакансий</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in dynamic_count_prof %}
+    <div class="table-graph-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ row.year }}</td>
-                    <td>{{ row.vacancy_count }}</td>
+                    <th>Год</th>
+                    <th>Количество Вакансий</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for row in dynamic_count_prof %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.vacancy_count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <img src="{% static 'demand/img/dynamic_count_prof_plot.png' %}" alt="График" width="1000" height="600">
+    </div>
 
 {% endblock %}
