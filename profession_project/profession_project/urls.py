@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from home.views import index_page
 from demand.views import demand_page
+from geography.views import geography_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page, name='home'),
-    path('demand/', demand_page, name='demand')
+    path('demand/', demand_page, name='demand'),
+    path('geography/', geography_page, name='geography')
 ]
