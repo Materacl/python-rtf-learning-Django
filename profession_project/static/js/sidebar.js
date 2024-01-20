@@ -1,8 +1,7 @@
-let sidebarOpen = true; // Изначально панель открыта
+let sidebarOpen = false; // Изначально панель открыта
 
 function toggleSidebar() {
     const sidebar = document.querySelector('.main-sidebar');
-    const content = document.querySelector('.content');
     const toggleButton = document.querySelector('.toggle-sidebar');
 
     if (sidebarOpen) {

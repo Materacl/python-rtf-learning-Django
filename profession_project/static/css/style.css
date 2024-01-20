@@ -16,6 +16,10 @@ body {
     padding: 20px;
 }
 
+.sidebar-nav-list {
+    margin-top: 40px;
+}
+
 .toggle-sidebar {
     position: absolute;
     top: 10px;
@@ -41,7 +45,7 @@ body {
 
 .content {
     flex: 1;
-    padding: 20px;
+    padding: 20px 100px;
 }
 
 .main-header,

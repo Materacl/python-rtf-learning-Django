@@ -15,7 +15,7 @@
         <nav class="sidebar-nav">
             <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
             <ul class="sidebar-nav-list">
-                <li class="sidebar-nav-list-item"><a href="#">Главная страница</a></li>
+                <li class="sidebar-nav-list-item"><a href="/">Главная страница</a></li>
                 <li class="sidebar-nav-list-item"><a href="#">Востребованность</a></li>
                 <li class="sidebar-nav-list-item"><a href="#">География</a></li>
                 <li class="sidebar-nav-list-item"><a href="#">Навыки</a></li>
@@ -26,14 +26,14 @@
 
     <div class="container">
         <header class="main-header">
-            <a class="logo" href="#">
+            <a class="logo" href="/">
                 <p>C++ Разработчик - Аналитика</p>
             </a>
         </header>
 
-        <div class="content">
+        <main class="content">
             {% block content %}<!-- default content text (typically empty) -->{% endblock %}
-        </div>
+        </main>
 
         <footer class="main-footer">
             <p>Юрченко Станислав Вячеславович</p>
