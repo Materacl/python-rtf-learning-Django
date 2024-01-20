@@ -20,11 +20,13 @@ from home.views import index_page
 from demand.views import demand_page
 from geography.views import geography_page
 from skills.views import skills_page
+from latest_vacancies.views import latest_vacancies_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_page, name='home'),
     path('demand/', demand_page, name='demand'),
     path('geography/', geography_page, name='geography'),
-    path('skills/', skills_page, name='skills')
+    path('skills/', skills_page, name='skills'),
+    path('latest_vacancies/', latest_vacancies_page, name='latest_vacancies')
 ]
