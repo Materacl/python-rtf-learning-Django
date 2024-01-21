@@ -4,13 +4,20 @@ import matplotlib.pyplot as plt
 
 def plot_bar_chart(data, title, xlabel, ylabel, filename):
     plt.figure(figsize=(10, 6))
-    plt.bar(data['skill_name'], data['count'], color='skyblue')
-    plt.title(title)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
-    plt.xticks(rotation=45, ha='right')
+    plt.bar(data['skill_name'], data['count'], color='#4285f4')  # Цвет столбцов
+    plt.title(title, color='white')  # Цвет заголовка
+    plt.xlabel(xlabel, color='white')  # Цвет подписей осей x и y
+    plt.ylabel(ylabel, color='white')
+    plt.xticks(rotation=45, ha='right', color='white')  # Цвет текста на оси x
+    plt.yticks(color='white')  # Цвет текста на оси y
+    plt.gca().spines['bottom'].set_color('white')  # Цвет оси x
+    plt.gca().spines['top'].set_color('white')
+    plt.gca().spines['right'].set_color('white')
+    plt.gca().spines['left'].set_color('white')
+    plt.grid(True, color='white')  # Цвет сетки
     plt.tight_layout()
-    plt.savefig(filename)
+    plt.gca().set_facecolor('#010409')  # Задание цвета фона графика
+    plt.savefig(filename, transparent=True)
     plt.show()
 
 
