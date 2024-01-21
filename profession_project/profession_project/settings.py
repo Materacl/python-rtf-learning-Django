@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'demand',
-    "geography",
+    'geography',
+    'skills',
     'import_export',
 ]
 

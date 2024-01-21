@@ -1,5 +1,56 @@
 {% extends "base_generic.html" %}
+{% load static %}
 {% block title %}<title>Навыки</title>{% endblock %}
 {% block content %}
     <h1>Здесь будут навыки</h1>
+
+    {% for year, skills in skills_all.items %}
+        <div class="year-block">
+            <h2>Динамика навыков по годам (Общая) - {{ year }}</h2>
+            <div class="table-graph-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Навык</th>
+                            <th>Количество</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in skills %}
+                            <tr>
+                                <td>{{ row.skill_name }}</td>
+                                <td>{{ row.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <img src="{% static 'skills/img/bar_chart_all_' %}{{ year }}.png" alt="График" width="1000" height="600">
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for year, skills in skills_prof.items %}
+        <div class="year-block">
+            <h2>Динамика навыков по годам ({{ prof }}) - {{ year }}</h2>
+            <div class="table-graph-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Навык</th>
+                            <th>Количество</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in skills %}
+                            <tr>
+                                <td>{{ row.skill_name }}</td>
+                                <td>{{ row.count }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <img src="{% static 'skills/img/bar_chart_prof_' %}{{ year }}.png" alt="График" width="1000" height="600">
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
