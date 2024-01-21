@@ -29,7 +29,7 @@ h1 {
     font-weight: 700;
     line-height: 34px;
     margin: 0;
-    padding: 10px;
+    padding: 20px;
     position: relative;
 }
 
@@ -97,24 +97,23 @@ h4 {
     padding: 20px;
 }
 
+/* Sidebar Toggle Button */
 .toggle-sidebar {
+    display: block;
     position: fixed;
-    top: 50%;
-    left: 0;
-    margin-top: -20px;
-    font-size: 30px;
+    top: 20px;
+    left: 10px;
+    font-size: 40px;
     cursor: pointer;
-    border: none;
     background: none;
     color: white;
     z-index: 1;
-    border: 1px white;
-    border: 1px white;
+    border: none;
     transition: left 0.3s;
 }
 
 .toggle-sidebar.opened {
-    left: 200px;
+    left: 220px;
     transition: left 0.3s;
 }
 
@@ -213,7 +212,7 @@ table th {
     border: 1px solid #dddddd;
     padding: 15px;
     margin-bottom: 20px;
-    /*overflow: hidden; /* Add overflow property to prevent content overflow */
+    overflow: hidden;
 }
 
 .table-graph-wrapper img {
@@ -267,7 +266,7 @@ form button:hover {
 
 /* Footer */
 .main-footer {
-    margin-top: auto;
+    margin-top: 0;
 }
 
 

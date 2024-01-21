@@ -5,24 +5,34 @@ import matplotlib.pyplot as plt
 def make_salary_plot(salary_data: pd.DataFrame, name: str, name_plot: str):
     plt.figure(figsize=(10, 6))
     plt.plot(salary_data['year'], salary_data['average_salary'], marker='o', label='Average Salary')
-    plt.title(name_plot)
-    plt.xlabel('Год')
-    plt.ylabel('Средняя зарплата')
+    plt.title(name_plot, color='white')
+    plt.xlabel('Год', color='white')
+    plt.ylabel('Средняя зарплата', color='white')
     plt.legend()
-    plt.grid(True)
-    plt.savefig('data/' + name)
+    plt.grid(True, color='white')  # Цвет сетки
+    plt.gca().set_facecolor('#010409')
+
+    # Изменение цвета надписей на сетке
+    plt.tick_params(axis='both', colors='white')
+
+    plt.savefig('data/' + name, transparent=True)
     plt.show()
 
 
 def make_count_plot(vacancy_data: pd.DataFrame, name: str, name_plot: str):
     plt.figure(figsize=(10, 6))
     plt.plot(vacancy_data['year'], vacancy_data['vacancy_count'], marker='o', color='orange', label='Vacancy Count')
-    plt.title(name_plot)
-    plt.xlabel('Год')
-    plt.ylabel('Количество вакансий')
+    plt.title(name_plot, color='white')
+    plt.xlabel('Год', color='white')
+    plt.ylabel('Количество вакансий', color='white')
     plt.legend()
-    plt.grid(True)
-    plt.savefig('data/' + name)
+    plt.grid(True, color='white')
+    plt.gca().set_facecolor('#010409')
+
+    # Изменение цвета надписей на сетке
+    plt.tick_params(axis='both', colors='white')
+
+    plt.savefig('data/' + name, transparent=True)
     plt.show()
 
 

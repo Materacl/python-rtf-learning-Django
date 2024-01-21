@@ -4,25 +4,30 @@ import matplotlib.pyplot as plt
 
 def make_salary_plot(salary_data: pd.DataFrame, name: str, name_plot: str):
     plt.figure(figsize=(12, 6))
-    plt.plot(salary_data['area_name'], salary_data['average_salary'], marker='o', label='Average Salary')
-    plt.title(name_plot)
-    plt.xlabel('Город')
-    plt.ylabel('Средняя зарплата')
-    plt.xticks(rotation=90)
+    plt.plot(salary_data['area_name'], salary_data['average_salary'], marker='o', label='Average Salary', color='green')
+    plt.title(name_plot, color='white')
+    plt.xlabel('Город', color='white')
+    plt.ylabel('Средняя зарплата', color='white')
+    plt.xticks(rotation=90, color='white')
+    plt.yticks(color='white')
     plt.legend()
-    plt.grid(True)
+    plt.grid(True, color='white')
     plt.tight_layout()
-    plt.savefig('data/' + name)
+    plt.gca().set_facecolor('#010409')  # Задание цвета фона графика
+    plt.savefig('data/' + name, transparent=True)
     plt.show()
 
 
 def make_count_plot(vacancy_data: pd.DataFrame, name: str, name_plot: str):
     plt.figure(figsize=(8, 6))
-    plt.pie(vacancy_data['vacancy_count'], labels=vacancy_data['area_name'], autopct='%1.1f%%', startangle=140)
-    plt.title(name_plot)
+    plt.pie(vacancy_data['vacancy_count'], labels=vacancy_data['area_name'], autopct='%1.1f%%', startangle=140,
+            colors=['#4285f4', '#0f9d58', '#f4b400', '#db4437', '#34a853', '#735cff', '#ff6600'],
+            textprops={'color': 'white'})  # Изменение цвета текста
+    plt.title(name_plot, color='white')
     plt.axis('equal')
     plt.tight_layout()
-    plt.savefig('data/' + name)
+    plt.gca().set_facecolor('#010409')  # Задание цвета фона графика
+    plt.savefig('data/' + name, transparent=True)
     plt.show()
 
 
