@@ -11,7 +11,7 @@ function toggleSidebar() {
         toggleButton.innerHTML = '☰';
     } else {
         container.style.filter = 'blur(5px)'; // Добавляем блюр перед изменением ширины меню
-        sidebar.style.width = '250px';
+        sidebar.style.width = '270px';
         toggleButton.innerHTML = '✖';
     }
 
@@ -19,9 +19,5 @@ function toggleSidebar() {
 
     // Добавляем/удаляем класс для изменения цвета кнопки
     toggleButton.classList.toggle('opened', sidebarOpen);
-}
-
-function zoomImage(element) {
-    element.classList.toggle('image-zoomed');
 }
 

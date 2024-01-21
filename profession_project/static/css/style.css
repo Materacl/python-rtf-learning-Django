@@ -67,6 +67,7 @@ h4 {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1000;
+    white-space: nowrap;
 }
 
 .sidebar-nav {
@@ -84,6 +85,8 @@ h4 {
     background: none;
     color: white;
     z-index: 1;
+    border: 1px white;
+    border: 1px white;
 }
 
 .toggle-sidebar.opened {
@@ -95,6 +98,7 @@ h4 {
     margin-top: 40px;
     list-style: none;
     padding: 0;
+    white-space: nowrap;
 
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -115,6 +119,8 @@ h4 {
     font-weight: bold;
     display: flex;
     align-items: center; /* Align text and icon vertically */
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
