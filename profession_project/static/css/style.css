@@ -1,8 +1,48 @@
 body {
+    color: #163152;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
     display: flex;
+    overflow-x: hidden; /* Prevent horizontal scrolling when the sidebar is open */
+}
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 55px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    transition: margin-left 0.3s; /* Add transition for content movement */
+}
+
+img {
+    display: block;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34px;
+    margin: 0;
+    padding: 0;
+}
+
+
+h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
 }
 
 .container {
@@ -10,8 +50,13 @@ body {
     height: 100%;
 }
 
-/*Sidebar*/
+/* Sidebar */
 .main-sidebar {
+    position: fixed;
+    top: 0;
+    padding-top: 25px;
+    left: 0;
+    height: 100%;
     width: 0;
     overflow: hidden;
     transition: width 0.3s;
@@ -23,19 +68,21 @@ body {
 }
 
 .toggle-sidebar {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    margin-bottom: 30px;
-    font-size: 24px;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    font-size: 30px;
     cursor: pointer;
     border: none;
     background: none;
-    color: white;
+    color: black;
+    z-index: 1;
 }
 
 .toggle-sidebar.opened {
-    color: black;
+    color: white;
+    left: 200px;
 }
 
 .sidebar-nav-list {
@@ -45,22 +92,25 @@ body {
 }
 
 .sidebar-nav-list-item {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
 }
 
 .sidebar-nav-list-item a {
+    font-size: 20px;
     text-decoration: none;
     color: white;
     font-weight: bold;
+    display: flex;
+    align-items: center; /* Align text and icon vertically */
 }
+
 
 .sidebar-nav-list-item a:hover {
     color: #007bff;
 }
 
-/**/
-
-/*header*/
+/* Header */
 .logo {
     text-decoration: none;
     color: white;
@@ -74,14 +124,12 @@ body {
     text-align: center;
 }
 
-/**/
-
-/*Content*/
+/* Content */
 .content {
     flex: 1;
     padding: 20px;
-    padding-left: 200px;
-    padding-right: calc(200px + 20px);
+    padding-left: 120px;
+    padding-right: calc(120px + 20px);
     box-sizing: border-box;
 }
 
@@ -93,45 +141,42 @@ body {
     float: left;
 }
 
-/* Общий стиль для таблиц */
+/* Table Styles */
 table {
     border-collapse: collapse;
-    width: 200px;
+    width: 100%;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: center;
 }
 
 table th {
     background-color: #f2f2f2;
-    padding: 8px;
-    border: 1px solid #dddddd;
-    font-weight: bold; /* Жирный шрифт для заголовков */
-    text-align: center; /* Выравнивание по центру */
+    font-weight: bold;
 }
 
-table td {
-    padding: 8px;
-    border: 1px solid #dddddd;
-    text-align: center; /* Выравнивание по центру */
-}
-
-/* Стиль для контейнера таблицы и графика */
+/* Table and Graph Container */
 .table-graph-wrapper {
+    margin: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Выравнивание по центру по вертикали */
-    border: 1px solid #dddddd; /* Обводка */
-    padding: 10px; /* Поля вокруг контейнера */
-    margin-bottom: 20px; /* Отступ снизу */
+    align-items: center;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    /*overflow: hidden; /* Add overflow property to prevent content overflow */
 }
 
 .table-graph-wrapper img {
-    max-width: 100%;
+    max-width: 80%;
+    width: 100%;
     height: auto;
 }
 
-img {
-    display: block;
+/* Footer */
+.main-footer {
+    margin-top: 20px;
 }
-/**/
-
-
-/*Footer*/

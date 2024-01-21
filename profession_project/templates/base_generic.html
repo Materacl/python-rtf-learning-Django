@@ -15,20 +15,28 @@
         <nav class="sidebar-nav">
             <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
             <ul class="sidebar-nav-list">
-                <li class="sidebar-nav-list-item"><a href="/">Главная страница</a></li>
-                <li class="sidebar-nav-list-item"><a href="{% url 'demand' %}">Востребованность</a></li>
-                <li class="sidebar-nav-list-item"><a href="{% url 'geography' %}">География</a></li>
-                <li class="sidebar-nav-list-item"><a href="{% url 'skills' %}">Навыки</a></li>
-                <li class="sidebar-nav-list-item"><a href="{% url 'latest_vacancies' %}">Последние вакансии</a></li>
+                <li class="sidebar-nav-list-item">
+                    <a href="/">🏠 Главная страница</a>
+                </li>
+                <li class="sidebar-nav-list-item">
+                    <a href="{% url 'demand' %}">📈 Востребованность</a>
+                </li>
+                <li class="sidebar-nav-list-item">
+                    <a href="{% url 'geography' %}">🌍 География</a>
+                </li>
+                <li class="sidebar-nav-list-item">
+                    <a href="{% url 'skills' %}">💼 Навыки</a>
+                </li>
+                <li class="sidebar-nav-list-item">
+                    <a href="{% url 'latest_vacancies' %}">📰 Последние вакансии</a>
+                </li>
             </ul>
         </nav>
     </aside>
 
     <div class="container">
         <header class="main-header">
-            <a class="logo" href="/">
-                <p>C++ Разработчик - Аналитика</p>
-            </a>
+            <h1><a class="logo" href="/">C++ Разработчик - Аналитика</a></h1>
         </header>
 
         <main class="content">
