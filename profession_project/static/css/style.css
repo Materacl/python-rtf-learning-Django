@@ -74,6 +74,7 @@ h4 {
     height: 100%;
     flex: 1;
     justify-content: space-between;
+    transition: filter 0.3s;
 }
 
 /* Sidebar */
@@ -288,6 +289,7 @@ form button:hover {
     .toggle-sidebar {
         display: block;
         -webkit-tap-highlight-color: transparent;
+        left: 5px;
     }
 
     .content {

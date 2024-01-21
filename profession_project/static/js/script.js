@@ -10,7 +10,7 @@ function toggleSidebar() {
         container.style.filter = 'none'; // Убираем блюр при закрытии меню
         toggleButton.innerHTML = '☰';
     } else {
-        container.style.filter = 'blur(5px)'; // Добавляем блюр перед изменением ширины меню
+        container.style.filter = 'blur(3px)'; // Добавляем блюр перед изменением ширины меню
         sidebar.style.width = '270px';
         toggleButton.innerHTML = '✖';
     }
