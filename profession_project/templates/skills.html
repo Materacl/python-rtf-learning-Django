@@ -2,7 +2,9 @@
 {% load static %}
 {% block title %}<title>Последние вакансии</title>{% endblock %}
 {% block content %}
-    <!-- Добавляем форму для выбора года -->
+
+    <h2>Навыки</h2>
+
     <form method="get" action="{% url 'skills' %}">
         <label for="year">Выберите год:</label>
         <select name="year" id="year">
@@ -12,9 +14,6 @@
         </select>
         <button type="submit">Применить</button>
     </form>
-
-    <!-- Отображение навыков по годам без пагинации -->
-    <h2>Навыки</h2>
 
     <div class="year-block">
         <h3>Динамика навыков по годам (Общая) - {{ selected_year }}</h3>
