@@ -30,6 +30,7 @@ h2 {
     line-height: 34px;
     margin: 0;
     padding: 0;
+    text-decoration: underline;
 }
 
 
@@ -192,4 +193,40 @@ table th {
 /* Footer */
 .main-footer {
     margin-top: auto;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    main {
+        padding: 0 20px;
+        font-size: 20px;
+    }
+
+    .float-left {
+        float: none;
+    }
+
+    .h1 {
+        font-size: 50px;
+    }
+
+    .toggle-sidebar {
+        display: block;
+    }
+
+    .content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .table-graph-wrapper {
+        flex-direction: column;
+    }
+
+    .table-graph-wrapper img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
 }

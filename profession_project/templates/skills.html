@@ -2,11 +2,11 @@
 {% load static %}
 {% block title %}<title>Навыки</title>{% endblock %}
 {% block content %}
-    <h1>Здесь будут навыки</h1>
+    <h2>Навыки</h2>
 
     {% for year, skills in skills_all.items %}
         <div class="year-block">
-            <h2>Динамика навыков по годам (Общая) - {{ year }}</h2>
+            <h3>Динамика навыков по годам (Общая) - {{ year }}</h3>
             <div class="table-graph-wrapper">
                 <table>
                     <thead>
@@ -31,7 +31,7 @@
 
     {% for year, skills in skills_prof.items %}
         <div class="year-block">
-            <h2>Динамика навыков по годам ({{ prof }}) - {{ year }}</h2>
+            <h3>Динамика навыков по годам ({{ prof }}) - {{ year }}</h3>
             <div class="table-graph-wrapper">
                 <table>
                     <thead>

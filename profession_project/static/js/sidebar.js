@@ -21,3 +21,7 @@ function toggleSidebar() {
     toggleButton.classList.toggle('opened', sidebarOpen);
 }
 
+function zoomImage(element) {
+    element.classList.toggle('image-zoomed');
+}
+

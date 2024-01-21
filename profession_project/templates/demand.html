@@ -2,9 +2,9 @@
 {% load static %}
 {% block title %}<title>Востребованность</title>{% endblock %}
 {% block content %}
-    <h1>Востребованность</h1>
+    <h2>Востребованность</h2>
 
-    <h2>Динамика уровня зарплат по годам (Общая)</h2>
+    <h3>Динамика уровня зарплат по годам (Общая)</h3>
     <div class="table-graph-wrapper">
         <table>
             <thead>
@@ -25,7 +25,7 @@
         <img src="{% static 'demand/img/dynamic_salary_all_plot.png' %}" alt="График" width="800" height="400">
     </div>
 
-    <h2>Динамика количества вакансий по годам (Общая)</h2>
+    <h3>Динамика количества вакансий по годам (Общая)</h3>
     <div class="table-graph-wrapper">
         <table>
             <thead>
@@ -46,7 +46,7 @@
         <img src="{% static 'demand/img/dynamic_count_all_plot.png' %}" alt="График" width="1000" height="600">
     </div>
 
-    <h2>Динамика уровня зарплат по годам ({{ prof }})</h2>
+    <h3>Динамика уровня зарплат по годам ({{ prof }})</h3>
     <div class="table-graph-wrapper">
         <table>
             <thead>
@@ -67,7 +67,7 @@
         <img src="{% static 'demand/img/dynamic_salary_prof_plot.png' %}" alt="График" width="1000" height="600">
     </div>
 
-    <h2>Динамика количества вакансий по годам ({{ prof }})</h2>
+    <h3>Динамика количества вакансий по годам ({{ prof }})</h3>
     <div class="table-graph-wrapper">
         <table>
             <thead>
