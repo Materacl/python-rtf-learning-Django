@@ -1,34 +1,38 @@
 import requests
 from django.shortcuts import render
+from .models import Vacancy
+
+
+def get_hh_vacancies(profession):
+    url = f'https://api.hh.ru/vacancies?text={profession}&period=1&per_page=10'
+    headers = {'User-Agent': 'urfuproject/1.0 (yurchenko.stas15@gmail.com)'}
+
+    response = requests.get(url, headers=headers)
+    data = response.json()
+
+    vacancies = []
+    for item in data.get('items', []):
+        salary_info = item.get('salary', {})
+        vacancy = {
+            'title': item.get('name', ''),
+            'description': item.get('description', ''),
+            'skills': ', '.join(item.get('key_skills', [])),
+            'company': item.get('employer', {}).get('name', ''),
+            'salary_from': salary_info.get('from', None) if salary_info else None,
+            'salary_to': salary_info.get('to', None) if salary_info else None,
+            'region': item.get('area', {}).get('name', ''),
+            'publication_date': item.get('published_at', '')
+        }
+        vacancies.append(vacancy)
+
+    return vacancies
 
 
 def latest_vacancies_page(request):
-    # Replace 'YOUR_HH_API_KEY' with your actual HeadHunter API key
-    hh_api_key = 'YOUR_HH_API_KEY'
+    profession = 'C++'
+    vacancies = get_hh_vacancies(profession)
+    for vacancy_data in vacancies:
+        Vacancy.objects.create(**vacancy_data)
 
-    # Specify the profession for IT vacancies
-    profession = 'С++'
-
-    # Specify the number of vacancies to retrieve
-    vacancies_count = 10
-
-    # Construct the API endpoint URL
-    api_url = f'https://api.hh.ru/vacancies?area=1&specialization=1.221&per_page={vacancies_count}&page=0&order_by=publication_time'
-
-    # Make the API request
-    response = requests.get(api_url, headers={'User-Agent': 'YourAppName/1.0', 'HH-User-Key': hh_api_key})
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Parse the JSON response
-        vacancies = response.json()['items']
-
-        # Prepare data for rendering
-        context = {'vacancies': vacancies}
-
-        # Render the template with the retrieved vacancies
-        return render(request, 'latest_vacancies.html', context)
-    else:
-        # Handle errors here (e.g., log the error, display an error message)
-        error_message = f"Error {response.status_code}: Unable to fetch vacancies from HeadHunter API."
-        return render(request, 'error.html', {'error_message': error_message})
+    context = {'vacancies': vacancies, 'profession': profession}
+    return render(request, 'latest_vacancies.html', context)

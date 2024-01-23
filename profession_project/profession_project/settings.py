@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'demand',
     'geography',
     'skills',
+    'latest_vacancies',
     'import_export',
 ]
 

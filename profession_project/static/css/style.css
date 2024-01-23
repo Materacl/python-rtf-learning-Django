@@ -144,7 +144,7 @@ h4 {
     color: white;
     font-weight: bold;
     display: flex;
-    align-items: center; /* Align text and icon vertically */
+    align-items: center;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -263,6 +263,48 @@ form button:hover {
     background-color: #0056b3;
 }
 
+/*Vacancy list*/
+.vacancy-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vacancy-list-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.vacancy-header {
+    margin-bottom: 10px;
+}
+
+.vacancy-header strong {
+    font-size: 1.2em;
+}
+
+.vacancy-header em {
+    color: #666;
+}
+
+.region {
+    font-style: italic;
+    color: #888;
+}
+
+.vacancy-details p {
+    margin: 5px 0;
+}
+
+.salary {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.publication-date {
+    color: #888;
+}
 
 
 /* Footer */
@@ -271,7 +313,7 @@ form button:hover {
 }
 
 
-
+/*Phone adaptation*/
 @media only screen and (max-width: 767px) {
     main {
         padding: 0 20px;

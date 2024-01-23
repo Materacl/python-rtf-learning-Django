@@ -1,4 +1,4 @@
-let sidebarOpen = false; // Изначально панель открыта
+let sidebarOpen = false;
 
 function toggleSidebar() {
     const sidebar = document.querySelector('.main-sidebar');
@@ -7,17 +7,16 @@ function toggleSidebar() {
 
     if (sidebarOpen) {
         sidebar.style.width = '0';
-        container.style.filter = 'none'; // Убираем блюр при закрытии меню
+        container.style.filter = 'none';
         toggleButton.innerHTML = '☰';
     } else {
-        container.style.filter = 'blur(3px)'; // Добавляем блюр перед изменением ширины меню
+        container.style.filter = 'blur(3px)';
         sidebar.style.width = '270px';
         toggleButton.innerHTML = '✖';
     }
 
     sidebarOpen = !sidebarOpen;
 
-    // Добавляем/удаляем класс для изменения цвета кнопки
     toggleButton.classList.toggle('opened', sidebarOpen);
 }
 
