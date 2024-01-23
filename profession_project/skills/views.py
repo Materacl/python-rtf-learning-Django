@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import TopSkillsAll, TopSkillsProf
 
+
 def skills_page(request):
     unique_years = list(range(2017, 2024))
     selected_year = request.GET.get('year', unique_years[-1])  # По умолчанию выбран последний год

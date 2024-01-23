@@ -11,7 +11,9 @@
                     <span class="region">{{ vacancy.region }}</span> <br>
                 </div>
                 <div class="vacancy-details">
-                    <p class="salary">Зарплата: {{ vacancy.salary_from }} - {{ vacancy.salary_to }}</p>
+                    <p class="description"><strong>Описание:</strong> {{ vacancy.description }}</p>
+                    <p class="skills"><strong>Навыки:</strong> {{ vacancy.skills }}</p>
+                    <p class="salary">Зарплата: {{ vacancy.salary_from }} - {{ vacancy.salary_to }} ({{ vacancy.salary_currency }})</p>
                     <p class="publication-date">Дата публикации: {{ vacancy.publication_date }}</p>
                 </div>
             </li>

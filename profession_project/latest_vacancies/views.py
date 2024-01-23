@@ -1,6 +1,11 @@
 import requests
+import re
 from django.shortcuts import render
 from .models import Vacancy
+
+
+def clear_html(line: str) -> str:
+    return re.sub(r'<.*?>', '', line.strip())
 
 
 def get_hh_vacancies(profession):
@@ -12,15 +17,25 @@ def get_hh_vacancies(profession):
 
     vacancies = []
     for item in data.get('items', []):
-        salary_info = item.get('salary', {})
+        vacancy_id = item.get('id', '')
+        url = f'https://api.hh.ru/vacancies/{vacancy_id}'
+        headers = {'User-Agent': 'urfuproject/1.0 (yurchenko.stas15@gmail.com)'}
+        response = requests.get(url, headers=headers)
+        vacancy_data = response.json()
+
+        skills_list = vacancy_data.get('key_skills', [])
+        skills = ', '.join(skill.get('name', '') for skill in skills_list)
+
+        salary_info = vacancy_data.get('salary', {})
         vacancy = {
-            'title': item.get('name', ''),
-            'description': item.get('description', ''),
-            'skills': ', '.join(item.get('key_skills', [])),
-            'company': item.get('employer', {}).get('name', ''),
+            'title': vacancy_data.get('name', ''),
+            'description': clear_html(vacancy_data.get('description', '')),
+            'skills': skills,
+            'company': vacancy_data.get('employer', {}).get('name', ''),
             'salary_from': salary_info.get('from', None) if salary_info else None,
             'salary_to': salary_info.get('to', None) if salary_info else None,
-            'region': item.get('area', {}).get('name', ''),
+            'salary_currency': salary_info.get('currency', None) if salary_info else None,
+            'region': vacancy_data.get('area', {}).get('name', ''),
             'publication_date': item.get('published_at', '')
         }
         vacancies.append(vacancy)
